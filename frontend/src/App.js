@@ -5,10 +5,22 @@ import Department from './Components/Department/Department'
 function App() {
   return (
     <div className="App">
-      <Employe />
-      <br>
-      </br>
-      <Department/>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "20px",
+        }}
+      >
+        <div>
+          <Employe />
+        </div>
+
+        <div style={{ marginTop: "80px" }}>
+          <Department />
+        </div>
+      </div>
     </div>
   );
 }
