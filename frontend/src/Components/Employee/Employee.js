@@ -24,7 +24,7 @@ const App = () => {
 
    const fetchEmployees = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/employee");
+      const response = await axios.get("http://localhost:8080/employee");
       setEmployees(response.data);
     } catch (err) {
       console.error(err);
@@ -39,11 +39,11 @@ const App = () => {
     try {
       if (editingId) {
          await axios.post(
-          `http://localhost:8000/employee/update/${editingId}`,
+          `http://localhost:8080/employe/update/${editingId}`,
           formData
         );
       } else {
-         await axios.post("http://localhost:8000/employee/add", formData);
+         await axios.post("http://localhost:8080/employe/add", formData);
       }
       fetchEmployees();
       handleClose();
@@ -54,7 +54,7 @@ const App = () => {
 
    const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/employee/delete/${id}`);
+      await axios.delete(`http://localhost:8080/employe/delete/${id}`);
       fetchEmployees();
     } catch (err) {
       console.error(err);
